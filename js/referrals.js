@@ -128,7 +128,7 @@
       
         if(values.name !== "") {  
           this.referral.attr(values).save();
-          $('#create input').val("Add a link");
+          $('#create input').val("");
         }  
       }  
     });  
