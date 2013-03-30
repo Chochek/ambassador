@@ -100,45 +100,12 @@
 	      var clickCount = parseInt(el.closest('.referral').find('.click-count').text());
 	      referral.attr('clicks', clickCount).save();
 	    }
-	});
-
-    Create = can.Control({  
-      init: function(){   
-        this.referral = new Referral(); 
-        this.element.html(can.view('views/referralCreate.ejs', {  
-          referral: this.referral, 
-        })); 
-      },
-
-      '.referral input keyup': function(el, ev) {  
-        if(ev.keyCode == 13){  
-          this.createReferral(el);  
-        }  
-      },  
-
-      '.save click' : function(el){  
-        this.createReferral(el)  
-      },   
-
-      createReferral: function() {  
-        this.referral = new Referral(); 
-        var form = this.element.find('form');   
-          values = can.deparam(form.serialize()); 
-          $(values).attr('clicks', '0');
-      
-        if(values.name !== "") {  
-          this.referral.attr(values).save();
-          $('#create input').val("Add a link");
-        }  
-      }  
-    });  
+	}); 
 
 
 	$(document).ready(function(){
 		$.when(Referral.findAll(), Referral.findAll()).then(function(referralResponse){
 			var referrals = referralResponse[0];
-
-			new Create('#create', {}); 
 			new Referrals('#referrals', {
 				referrals: referrals
 			});
