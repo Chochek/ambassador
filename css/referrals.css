@@ -1,0 +1,179 @@
+h1 {
+	font-size: 52px;
+	line-height: 1;
+	margin-bottom: 15px;
+}
+
+#new-referral {
+	margin-bottom: 10px;
+}
+
+#create {
+	display: block;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#referrals ul {
+	margin-left:0;list-style:none;
+}
+
+.referral {
+	border: 1px solid #CCCCCC;
+    margin-bottom: -1px;
+    position: relative;
+    width: 483px;
+}
+
+.referral .buttons {
+	position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.referral form {
+	margin-bottom: 0;
+}
+
+.referral form label {
+	float: left;
+	padding-top: 5px;
+	text-align: right;
+	width: 60px;
+}
+
+.referral form input {
+	margin-left: 10px;
+	margin-bottom: 0;
+}
+
+.referral label {
+	font-weight: bold;
+}
+
+.referral input, .referral select {
+	width: 120px;
+}
+
+.referral input {
+	border: 1px solid #fff;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.referral input.empty,
+.referral input:hover, 
+.referral input:focus, 
+.referral select:hover, 
+.referral select:focus {
+	border: 1px solid #CCC;
+	-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.referral [name="name"] {
+    font-size: 16px;
+    height: 26px;
+    line-height: 26px;
+    margin-bottom: 1px;
+    margin-left: 0;
+    padding: 4px 10px;
+    width: 200px;
+
+    display:  none;
+}
+
+.referral [name="category"]{
+	font-size: 11px;
+	height: 14px;
+	line-height: 14px;
+}
+
+.referral .remove {
+}
+
+#create .referral .remove {
+	display: none;
+}
+
+.title.span3 {
+	border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.title.span2 {
+	border-top: 1px solid #CCCCCC;
+	margin-left: 0px;
+}
+
+.title.span1 {
+	border-right: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 10px;
+    font-size: 16px;
+	margin-left: 0px;
+}
+
+.referral .span3 {
+    width: 240px;
+}
+
+.referral .span1 {
+    border-left: 1px solid #CCCCCC;
+    height: 37px;
+    line-height: 37px;
+    margin-left: 0;
+    text-align: center;
+    width: 80px;
+}
+
+.referral .span3 > a {
+    display: block;
+    font-size: 16px;
+    height: 29px;
+    line-height: 27px;
+    padding: 4px 12px;
+}
+
+#create .referral {
+	border: none;
+	margin-bottom: 0;
+}
+
+#create .referral .span1 {
+	display: none;
+}
+
+#create .referral form {
+    border: 1px solid #CCCCCC;
+    width: 425px;
+}
+
+#create input {
+    border: medium none;
+    width: 405px;
+    display:  block;
+}
+
+#create .referral .span3 a {
+	display: none;
+}
+
+.span7 {
+    float: none;
+    margin: 0 auto;
+    width: 540px;
+}
+
+.span12 {
+	text-align: center;
+}
