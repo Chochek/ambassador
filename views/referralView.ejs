@@ -1,0 +1,17 @@
+<form>
+	<div class="row">
+		<div class="span3">
+			<a class="referral-link" target="_blank" href="landing.html?link=<%= referral.attr('name') %>"><%= referral.attr('name') %></a>
+			<input type="text" name="name" placeholder="Add a link"  <%= referral.attr('name') ? "value='" + referral.name + "'" : "class='empty'" %> >
+		</div>
+		<div class="span1 click-count">
+			<%= referral.attr('clicks') %>
+		</div>
+		<div class="span1">
+			<a href="javascript://" class="edit">Edit</a>
+		</div>
+		<div class="span1">
+			<a href="javascript://" class="remove"><i class="icon-remove"></i></a>
+		</div>
+	</div>
+</form>

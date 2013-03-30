@@ -1,0 +1,7 @@
+<ul class="clearfix">
+	<% list(referrals, function(referral){ %>
+		<li class="referral span6" <%= (el)-> el.data('referral', referral) %>>
+			<%== can.view.render('views/referralView.ejs', {referral: referral}) %>
+		</li>
+	<% }) %>
+</ul>
