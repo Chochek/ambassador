@@ -59,6 +59,7 @@
 	    '.referral input focusout': function(el, ev) {  
 	      this.updateReferral(el);  
 	      el.hide().siblings('a').show();
+	      el.siblings('a.add').hide();
 	    },  
 	    
 	    '.referral input keyup': function(el, ev) {  
@@ -81,6 +82,7 @@
         '.edit click': function(el, ev){  
 	      el.closest('.referral').find('.span3').children('a').hide();
 	      el.closest('.referral').find('.span3').children('input').show().trigger('focus');
+	      el.closest('.referral').find('.span3').children('a.add').show();
 	    }, 
 
         '{Referral} created' : function(list, ev, referral){  
@@ -100,11 +102,43 @@
 	    }
 	});
 
+    Create = can.Control({  
+      init: function(){   
+        this.referral = new Referral(); 
+        this.element.html(can.view('views/referralCreate.ejs', {  
+          referral: this.referral, 
+        })); 
+      },
+
+      '.referral input keyup': function(el, ev) {  
+        if(ev.keyCode == 13){  
+          this.createReferral(el);  
+        }  
+      },  
+
+      '.save click' : function(el){  
+        this.createReferral(el)  
+      },   
+
+      createReferral: function() {  
+        this.referral = new Referral(); 
+        var form = this.element.find('form');   
+          values = can.deparam(form.serialize()); 
+          $(values).attr('clicks', '0');
+      
+        if(values.name !== "") {  
+          this.referral.attr(values).save();
+          $('#create input').val("Add a link");
+        }  
+      }  
+    });  
+
 
 	$(document).ready(function(){
 		$.when(Referral.findAll(), Referral.findAll()).then(function(referralResponse){
 			var referrals = referralResponse[0];
-			
+
+			new Create('#create', {}); 
 			new Referrals('#referrals', {
 				referrals: referrals
 			});
