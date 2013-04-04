@@ -63,10 +63,15 @@
 	    },  
 	    
 	    '.referral input keyup': function(el, ev) {  
-	      if(ev.keyCode == 13) { 
+	      if(ev.which == 13 || ev.keyCode == 13) { 
 	        el.blur();
+	        ev.preventDefault();
 	      }  
 	    },  
+
+        'form submit' : function(el, ev) {
+        	ev.preventDefault();
+        },  
 
 	    updateReferral: function(el){  
 	      var referral = el.closest('.referral').data('referral');
@@ -110,14 +115,13 @@
         })); 
       },
 
-      '.referral input keyup': function(el, ev) {  
-        if(ev.keyCode == 13){  
-          this.createReferral(el);  
-        }  
+      '.save click' : function(el, ev){ 
+        this.createReferral(el);
       },  
 
-      '.save click' : function(el){  
-        this.createReferral(el)  
+      'form submit' : function(el, ev){ 
+        this.createReferral(el);  
+        ev.preventDefault();
       },   
 
       createReferral: function() {  
@@ -128,7 +132,7 @@
       
         if(values.name !== "") {  
           this.referral.attr(values).save();
-          $('#create input').val("");
+          $('#create input').val("Add a link");
         }  
       }  
     });  
